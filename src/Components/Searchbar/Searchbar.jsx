@@ -25,7 +25,7 @@ export default class Searchbar extends Component {
 
         const options = {
             keys: keys,
-            threshold: .3
+            threshold: .05
         }
 
         const fuse = new Fuse(itemsToSearch, options)
@@ -42,7 +42,7 @@ export default class Searchbar extends Component {
         return (
             <>
                 <input type="text" placeholder="Your search goes here" onChange={(e) => this.inputChangeHandler(e)}></input>
-                {this.state.searchParam !== "" ? <Table items={this.state.searchResult} /> : "No search"}
+                {this.state.searchParam !== "" && this.state.searchResult  ? <Table items={this.state.searchResult} /> : "No results"}
             </>
         );
     }

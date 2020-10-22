@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import "./App.css"
 
 import Table from "../Table/Table"
-import Searchbar from '../Navigation/Searchbar';
+import Searchbar from '../Searchbar/Searchbar';
 
 const API_URL = "http://www.devcodecampmusiclibrary.com/api/music"
 
