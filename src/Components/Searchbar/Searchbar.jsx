@@ -4,9 +4,13 @@ import Table from '../Table/Table';
 import "./Searchbar.css";
 
 export default class Searchbar extends Component {
-    state = {
-        searchParam: '',
-        searchResult: null
+    constructor(props) {
+        super(props)
+
+        this.state = {
+            searchParam: '',
+            searchResult: this.props.items
+        }
     }
 
     inputChangeHandler(e) {
@@ -42,8 +46,8 @@ export default class Searchbar extends Component {
     render() {
         return (
             <div className="container">
-                <input type="text" placeholder="Your search goes here" onChange={(e) => this.inputChangeHandler(e)}></input>
-                {this.state.searchParam !== "" && this.state.searchResult.length ? <Table items={this.state.searchResult} /> : <p className="no-results">No results</p>}
+                <input className="search" type="text" placeholder="Your search goes here" onChange={(e) => this.inputChangeHandler(e)}></input>
+                {this.state.searchParam !== "" ? this.state.searchResult.length ? <Table items={this.state.searchResult} /> : <p className="no-results">No results</p> : <Table items={this.props.items} />}
             </div>
         );
     }

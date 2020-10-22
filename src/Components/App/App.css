@@ -6,3 +6,16 @@
     gap: 15px;
     margin-bottom: 25px;
 }
+
+.btn {
+    font-size: 1.25rem;
+    padding: 7px 9px;
+    border: 1px solid black;
+    outline: none;
+    border-radius: 3px;
+}
+
+.btn:hover {
+    cursor: pointer;
+    box-shadow: 0 0 10px 0 #a6a6a6;
+}

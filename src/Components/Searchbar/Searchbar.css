@@ -4,3 +4,20 @@
     align-items: center;
     flex-direction: column;
 }
+
+.search {
+    padding: 5px;
+    border: none;
+    font-size: 1.3rem;
+    font-family: inherit;
+    margin-bottom: 15px;
+    border-radius: .2em;
+}
+
+.search:hover {
+    box-shadow: 0 0 10px 0 #a6a6a6;
+}
+
+.search:focus {
+    outline: none;
+}
