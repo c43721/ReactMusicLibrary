@@ -3,7 +3,7 @@ import "./Table.css"
 export default class Table extends Component {
     render() {
         return this.props.items ? (
-            <table className="table table-striped">
+            <table className="table">
                 <tbody>
                     <tr className="table-headers">
                         <th>Title</th>
