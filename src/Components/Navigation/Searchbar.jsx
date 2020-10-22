@@ -32,8 +32,6 @@ export default class Searchbar extends Component {
 
         const resultingList = fuse.search(searchParam)
 
-        console.log(resultingList)
-
         this.setState({
             searchResult: resultingList.map(result => result.item)
         })
