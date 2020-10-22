@@ -9,7 +9,8 @@ const API_URL = "http://www.devcodecampmusiclibrary.com/api/music"
 
 export default class App extends Component {
   state = {
-    results: null
+    results: null,
+    renderTable: true
   }
 
   async componentDidMount() {
@@ -21,14 +22,26 @@ export default class App extends Component {
     })
   }
 
+  handleButtonClick() {
+    this.setState((prevRender) => {
+      return {
+        renderTable: !prevRender.renderTable
+      }
+    })
+  }
+
   render() {
     return (
       <>
         <h1 className="header">Music Library V2</h1>
 
-        <Searchbar items={this.state.results} />
+        <button onClick={() => this.handleButtonClick()}>{this.state.renderTable ? "View Search" : "View Table"}</button>
 
-        <Table items={this.state.results} />
+        {this.state.renderTable ? (
+          <Table items={this.state.results} />
+        ) : (
+            <Searchbar items={this.state.results} />
+          )}
       </>
     );
   }
