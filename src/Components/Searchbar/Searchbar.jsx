@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Fuse from "fuse.js";
 import Table from '../Table/Table';
+import "./Searchbar.css";
 
 export default class Searchbar extends Component {
     state = {
@@ -40,10 +41,10 @@ export default class Searchbar extends Component {
 
     render() {
         return (
-            <>
+            <div className="container">
                 <input type="text" placeholder="Your search goes here" onChange={(e) => this.inputChangeHandler(e)}></input>
-                {this.state.searchParam !== "" && this.state.searchResult  ? <Table items={this.state.searchResult} /> : "No results"}
-            </>
+                {this.state.searchParam !== "" && this.state.searchResult.length ? <Table items={this.state.searchResult} /> : <p className="no-results">No results</p>}
+            </div>
         );
     }
 }

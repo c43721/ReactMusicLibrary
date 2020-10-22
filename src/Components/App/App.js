@@ -33,9 +33,11 @@ export default class App extends Component {
   render() {
     return (
       <>
-        <h1 className="header">Music Library V2</h1>
+        <div className="center">
+          <h1 className="header">Music Library V2</h1>
 
-        <button onClick={() => this.handleButtonClick()}>{this.state.renderTable ? "View Search" : "View Table"}</button>
+          <button className="btn" onClick={() => this.handleButtonClick()}>{this.state.renderTable ? "View Search" : "View Table"}</button>
+        </div>
 
         {this.state.renderTable ? (
           <Table items={this.state.results} />
