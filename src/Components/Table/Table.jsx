@@ -1,8 +1,9 @@
-import React, { Component } from 'react';
+import React from 'react';
 import "./Table.css"
-export default class Table extends Component {
-    render() {
-        return this.props.items ? (
+
+export default function Table({ items }) {
+    return (
+        items ? (
             <table className="table">
                 <tbody>
                     <tr className="table-headers">
@@ -13,7 +14,7 @@ export default class Table extends Component {
                         <th>Release Date</th>
                     </tr>
 
-                    {this.props.items.map(musicItem =>
+                    {items.map(musicItem =>
                         <tr className="row" key={musicItem.id}>
                             <td>{musicItem.title}</td>
                             <td>{musicItem.album}</td>
@@ -24,6 +25,6 @@ export default class Table extends Component {
                     )}
                 </tbody>
             </table>
-        ) : null;
-    }
+        ) : null
+    );
 }
