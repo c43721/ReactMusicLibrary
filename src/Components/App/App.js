@@ -17,6 +17,8 @@ export default class App extends Component {
     const { data } = await Axios.get(API_URL)
     const apiResults = data
 
+    apiResults.sort(() => Math.random() - .5);
+
     this.setState({
       results: apiResults
     })
