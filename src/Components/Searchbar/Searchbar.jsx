@@ -46,7 +46,7 @@ export default class Searchbar extends Component {
     render() {
         return (
             <div className="container">
-                <input className="search" type="text" placeholder="Your search goes here" onChange={(e) => this.inputChangeHandler(e)}></input>
+                <input aria-label="searchInput" className="search" type="text" placeholder="Your search goes here" onChange={(e) => this.inputChangeHandler(e)}></input>
                 {this.state.searchParam !== "" ? this.state.searchResult.length ? <Table items={this.state.searchResult} /> : <p className="no-results">No results</p> : <Table items={this.props.items} />}
             </div>
         );
