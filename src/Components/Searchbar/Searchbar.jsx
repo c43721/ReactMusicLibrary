@@ -30,7 +30,7 @@ export default class Searchbar extends Component {
 
         const options = {
             keys: keys,
-            threshold: .05
+            threshold: .4
         }
 
         const fuse = new Fuse(itemsToSearch, options)
