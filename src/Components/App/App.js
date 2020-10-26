@@ -1,27 +1,31 @@
 import Axios from 'axios';
 import React, { Component } from 'react';
-import "./App.css"
+import "./App.css";
 
-import Table from "../Table/Table"
+import Table from "../Table/Table";
 import Searchbar from '../Searchbar/Searchbar';
 
-const API_URL = "http://www.devcodecampmusiclibrary.com/api/music"
+const API_URL = "http://www.devcodecampmusiclibrary.com/api/music";
 
 export default class App extends Component {
-  state = {
-    results: null,
-    renderTable: true
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      results: null,
+      renderTable: true
+    }
   }
 
   async componentDidMount() {
-    const { data } = await Axios.get(API_URL)
-    const apiResults = data
+    const { data } = await Axios.get(API_URL);
+    const apiResults = data;
 
     apiResults.sort(() => Math.random() - .5);
 
     this.setState({
       results: apiResults
-    })
+    });
   }
 
   handleButtonClick() {
@@ -29,7 +33,7 @@ export default class App extends Component {
       return {
         renderTable: !prevRender.renderTable
       }
-    })
+    });
   }
 
   render() {
